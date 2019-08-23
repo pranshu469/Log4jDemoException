@@ -8,7 +8,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Properties;
-import org.apache.log4j.*;
 import java.util.Scanner;
 
 
@@ -16,19 +15,15 @@ public class Log4jDemo
 {
     static Scanner sc;
     static Connection c;
-   // static String path="C:\\Users\\Pranshu\\Documents\\NetBeansProjects\\14-06-19\\13-06-19\\Log4jDemoException\\src\\Log4jDemo.properties";
-    private static final Logger logger=Logger.getLogger(Log4jDemo.class.getName());
     static Properties p;
     static int a;
     
     public static void main(String[] args) throws FileNotFoundException, IOException 
     {
          sc=new Scanner(System.in);
-         System.out.println("enter the path of properties file");
          
-         String path=sc.nextLine();   
+         String path="D:\\java program\\Log4jDemoException\\src\\log4jdemoexception\\Log4jDemo.properties";   
 
-        PropertyConfigurator.configure(path);
         
          Add obj1=new Add();
          Sub obj2=new Sub();
@@ -68,39 +63,39 @@ public class Log4jDemo
                 }     
             if(a==10)
             {
-                logger.warn("warning exiting");
+                System.out.println("warning exiting");
                 try {
                     c.close();
                 } catch (Exception e) {
-                    logger.error(e);
+                    System.out.println(e);
                 }
                 break;
             }
             
             if(a==1)
             {
-                logger.info("info add");
+                System.out.println("info add");
                 obj1.add();
                 
                 
             }
             if(a==2)
             {
-                 logger.info("info sub");
+                 System.out.println("info sub");
                  obj2.sub();
                  
             }
             
             if(a==3)
             {
-                logger.info("info mul");
+                System.out.println("info mul");
                 obj3.mul();
                 
             }
             
             if(a==4)
             {
-                logger.info("info divide");
+                System.out.println("info divide");
                 obj5.div();
                 
             }
@@ -111,29 +106,10 @@ public class Log4jDemo
                 System.out.println("3.  MUL");
                 System.out.println("4.  DIV");
                 System.out.println("10.  EXIT");
-                logger.info("information");
+                System.out.println("information");
                 
             }
            
     }
     }
 }
-
-/* try{
-                      str=sc.nextLine();
-                      System.out.println("invalid input "+str);
-                  }catch(Exception e){//a=0;
-                  System.out.println("check your input"+str);}
-                  */
-                 
-                 /*
-               if(a!=10 || a!=1 || a!=2 || a!=3 || a!=4 || a!=0)
-               {
-                   System.out.println("wrong input");
-                   //a=0;
-               }*/
-//System.in.read();
-//byte[] b = new byte[1024];
-                     //int aa =  System.in.read(b);
-                    
-                     //System.out.print(b.toString());
