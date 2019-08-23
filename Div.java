@@ -2,7 +2,6 @@ package log4jdemo;
 import java.io.IOException;
 import java.sql.*;
 import java.util.InputMismatchException;
-import org.apache.log4j.Logger;
 
 public class Div 
 {
@@ -30,11 +29,11 @@ public class Div
                     int x=s.executeUpdate("insert into "+Log4jDemo.p.getProperty("tb")+" values('"+t1+"','"+x1+"','"+y1+"','"+z1+"')");
                     ResultSet rs=s.executeQuery("select * from "+Log4jDemo.p.getProperty("tb"));
                       }catch(SQLException e){
-                                logger.error("error occured "+e);
+                                System.out.println("error occured "+e);
                                  }
             }
         else{
-                logger.error("denominator can not be zero");
+                System.out.println("denominator can not be zero");
             Log4jDemo l4;
             l4 = new Log4jDemo();
             }
