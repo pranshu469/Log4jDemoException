@@ -6,11 +6,9 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.InputMismatchException;
 
-import org.apache.log4j.Logger;
 
 public class Mul
 {
-   private static final Logger logger=Logger.getLogger(Log4jDemo.class.getName());
     public void mul() throws IOException
     {
          int x1=0,y1=0,z1=0,exc=0;
@@ -35,7 +33,7 @@ public class Mul
             int x=s.executeUpdate("insert into "+Log4jDemo.p.getProperty("tb")+" values('"+t1+"','"+x1+"','"+y1+"','"+z1+"')");
             ResultSet rs=s.executeQuery("select * from "+Log4jDemo.p.getProperty("tb"));
             }catch(Exception e){
-            logger.error("error occured "+e);
+            System.out.println("error occured "+e);
         }
         }
         else{
